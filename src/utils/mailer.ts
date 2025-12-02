@@ -33,7 +33,7 @@ export const sendBookingEmail = async (booking: BookingInput) => {
     <!-- LOGO -->
     <div style="text-align: center; margin-bottom: 24px;">
       <img 
-        src="https://exclusivo.vercel.app/exclusivo-logo.png" 
+        src="https://exclusivo-five.vercel.app/exclusivo-logo.png" 
         alt="Exclusivo Logo" 
         style="width: 70px; height: auto; margin-bottom: 12px;"
       />
