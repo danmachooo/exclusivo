@@ -29,6 +29,7 @@ import {
   ToastDescription,
   ToastTitle,
 } from "@/components/ui/toast";
+import { format } from "date-fns";
 
 const services = [
   { id: "classic", name: "Exclusivo Classico", price: 160 },
@@ -93,15 +94,19 @@ export function BookingSection() {
     setIsSubmitting(true);
 
     try {
+      const formattedDate = format(date, "dd-MM-yyyy"); // e.g., "02-12-2025"
+      const formattedTime = format(selectedTime, "hh:mm aa"); // e.g., "04:02 AM"
       const booking = {
         name,
         phone,
-        date: date.toISOString(),
-        selectedTime: selectedTime.toISOString(),
+        date: formattedDate,
+        selectedTime: formattedTime,
         selectedBarber,
         selectedServices,
         note,
       };
+
+      console.log("Booking: ", booking);
 
       const res = await fetch("/api/booking", {
         method: "POST",
